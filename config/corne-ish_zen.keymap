@@ -145,10 +145,10 @@
 // |      |  |  |  %  |  $  |  @  |  &  |   |BT_CLR| BT 0| BT 1| BT 2| BT 3|     |
 //                    |     |     |     |   |      |     |     |
                         bindings = <
-   &trans &kp deGREATER_THAN &kp deRIGHT_BRACKET &kp deRIGHT_BRACE &kp  deRIGHT_PARENTHESIS &trans  &bt BT_NXT &out OUT_USB &out OUT_BLE  &trans       &reset       &trans
-   &trans &kp deLESS_THAN    &kp deLEFT_BRACKET  &kp deLEFT_BRACE  &kp  deLEFT_PARENTHESIS  &trans  &bt BT_PRV &trans       &trans        &trans       &bootloader  &trans
-   &trans &kp dePIPE         &kp dePERCENT       &kp deDOLLAR      &kp  deAT_SIGN           &trans  &bt BT_CLR &bt BT_SEL 0 &bt BT_SEL 1  &bt BT_SEL 2 &bt BT_SEL 3 &trans
-                                                 &trans            &trans                   &trans  &trans     &trans       &trans 
+   &trans &kp deGREATER_THAN &kp deRIGHT_BRACKET &kp deRIGHT_BRACE &kp  deRIGHT_PARENTHESIS &kp deBACKSLASH  &bt BT_NXT &out OUT_USB &out OUT_BLE  &trans       &reset       &trans
+   &trans &kp deLESS_THAN    &kp deLEFT_BRACKET  &kp deLEFT_BRACE  &kp  deLEFT_PARENTHESIS  &kp deSLASH      &bt BT_PRV &trans       &trans        &trans       &bootloader  &trans
+   &trans &kp dePIPE         &kp dePERCENT       &kp deDOLLAR      &kp  deAT_SIGN           &kp deAMPERSAND  &bt BT_CLR &bt BT_SEL 0 &bt BT_SEL 1  &bt BT_SEL 2 &bt BT_SEL 3 &trans
+                                                 &trans            &trans                   &trans           &trans     &trans       &trans 
                         >;
                 };
 
