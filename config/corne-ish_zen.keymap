@@ -6,54 +6,184 @@
 */
 
 #include <behaviors.dtsi>
+#include <language_german.dtsi>
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/bt.h>
 
+#define base 0
+#define sym 1
+#define num 2
+#define nav 3
+
 / {
+
+	behaviors {
+		hm: homerow_mods {
+			compatible = "zmk,behavior-hold-tap";
+			label = "homerow mods";
+			#binding-cells = <2>;
+			tapping_term_ms = <200>;
+			flavor = "tap-preferred";
+			bindings = <&kp>, <&kp>;
+		};
+	};
+
+
+	combos {
+        compatible = "zmk,combos";
+        combo_nav {
+            timeout-ms = <40>;
+            key-positions = <37 38>;
+            bindings = <&tog nav>;
+        };
+
+        combo_ue {
+            timeout-ms = <40>;
+            key-positions = <7 3>;
+            bindings = <&kp deUE>;
+        };
+	combo_oe {
+            timeout-ms = <40>;
+            key-positions = <9 3>;
+            bindings = <&kp deOE>;
+        };
+	combo_ae {
+            timeout-ms = <40>;
+            key-positions = <13 3>;
+            bindings = <&kp deAE>;
+        };
+        combo_ss {
+            timeout-ms = <40>;
+            key-positions = <13 14>;
+            bindings = <&kp deESZETT>;
+        };
+
+        combo_F1 {
+            timeout-ms = <40>;
+            key-positions = <1 13>;
+            bindings = <&kp F1>;
+        };
+        combo_F2 {
+            timeout-ms = <40>;
+            key-positions = <2 14>;
+            bindings = <&kp F2>;
+        };
+        combo_F3 {
+            timeout-ms = <40>;
+            key-positions = <3 15>;
+            bindings = <&kp F3>;
+        };
+        combo_F4 {
+            timeout-ms = <40>;
+            key-positions = <4 16>;
+            bindings = <&kp F4>;
+        };
+        combo_F5 {
+            timeout-ms = <40>;
+            key-positions = <5 17>;
+            bindings = <&kp F5>;
+        };
+        combo_F6 {
+            timeout-ms = <40>;
+            key-positions = <6 18>;
+            bindings = <&kp F6>;
+        };
+        combo_F7 {
+            timeout-ms = <40>;
+            key-positions = <7 19>;
+            bindings = <&kp F7>;
+        };
+        combo_F8 {
+            timeout-ms = <40>;
+            key-positions = <8 20>;
+            bindings = <&kp F8>;
+        };
+        combo_F9 {
+            timeout-ms = <40>;
+            key-positions = <9 21>;
+            bindings = <&kp F1>;
+        };
+        combo_F10 {
+            timeout-ms = <40>;
+            key-positions = <10 22>;
+            bindings = <&kp F10>;
+        };
+        combo_F11 {
+            timeout-ms = <40>;
+            key-positions = <1 2>;
+            bindings = <&kp F11>;
+        };
+        combo_F12 {
+            timeout-ms = <40>;
+            key-positions = <9 10>;
+            bindings = <&kp F12>;
+        };
+
+    };
+    
         keymap {
                 compatible = "zmk,keymap";
 
                 default_layer {
                         label = "QWERTY";
 // -----------------------------------------------------------------------------------------
-// |  TAB |  Q  |  W  |  E  |  R  |  T  |   |  Y  |  U   |  I  |  O  |  P  | BKSP |
-// | CTRL |  A  |  S  |  D  |  F  |  G  |   |  H  |  J   |  K  |  L  |  ;  |  '   |
-// | SHFT |  Z  |  X  |  C  |  V  |  B  |   |  N  |  M   |  ,  |  .  |  /  | ESC  |
+// |      |  Q  |  W  |  E  |  R  |  T  |   |  Y  |  U   |  I  |  O  |  P  |      |
+// |      |  A  |  S  |  D  |  F  |  G  |   |  H  |  J   |  K  |  L  |  ;  |      |
+// |      |  Z  |  X  |  C  |  V  |  B  |   |  N  |  M   |  ,  |  .  |  /  |      |
 //                    | GUI | LWR | SPC |   | ENT | RSE  | ALT |
                         bindings = <
-   &kp TAB   &kp Q &kp W &kp E &kp R &kp T   &kp Y &kp U  &kp I     &kp O   &kp P    &kp BSPC
-   &kp LCTRL &kp A &kp S &kp D &kp F &kp G   &kp H &kp J  &kp K     &kp L   &kp SEMI &kp SQT
-   &kp LSHFT &kp Z &kp X &kp C &kp V &kp B   &kp N &kp M  &kp COMMA &kp DOT &kp FSLH &kp ESC
-                  &kp LGUI &mo 1 &kp SPACE   &kp RET &mo 2 &kp RALT
+// 0     1            2          3           4           5             ｜   6          7           8           9          10       11                   
+   &none &kp Q        &kp W      &kp E       &kp R       &kp T         ｜   &kp deY    &kp U       &kp I       &kp O      &kp P    &none
+// 12    13           14         15          16          17            ｜   18         19          20          21         22       23
+   &none &kp A        &hm LALT S &hm LCTRL D &hm LSHFT F &kp G         ｜   &kp H      &hm RSHFT J &hm RCTRL K &hm RALT L &kp RET  &none
+// 24    25           26         27          28          29            ｜   30         31          32          33         34       35 
+   &none &hm LGUI deZ &kp X      &kp C       &kp V       &kp B         ｜   &kp N      &kp M       &kp COMMA   &kp DOT    &kp FSLH &none
+//                               36          37          38            ｜   39         40          41    
+                                 &none       &lt 2 RET   &lt 1 SPACE   ｜   &lt 1 BPSC &lt 2 DEL   &none
                         >;
                 };
-                lower_layer {
-                        label = "NUMBER";
+                symbol {
+                        label = "SYMBOL";
 // -----------------------------------------------------------------------------------------
-// |  TAB |  1  |  2  |  3  |  4  |  5  |   |  6  |  7  |  8  |  9  |  0  | BKSP |
-// | BTCLR| BT1 | BT2 | BT3 | BT4 | BT5 |   | LFT | DWN |  UP | RGT |     |      |
-// | SHFT |     |     |     |     |     |   |     |     |     |     |     |      |
-//                    | GUI |     | SPC |   | ENT |     | ALT |
+// |      |  >  |  ]  |  }  |  )  |  \  |   |BT_NXT| USB |  BT |     |RESET|     |
+// |      |  <  |  [  |  {  |  (  |  /  |   |BT_PRV|     |     |     |Boot |     |
+// |      |  |  |  %  |  $  |  @  |  &  |   |BT_CLR| BT 0| BT 1| BT 2| BT 3|     |
+//                    |     |     |     |   |      |     |     |
                         bindings = <
-   &kp TAB    &kp N1       &kp N2       &kp N3       &kp N4       &kp N5         &kp N6   &kp N7   &kp N8 &kp N9    &kp N0 &kp BSPC
-   &bt BT_CLR &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4   &kp LEFT &kp DOWN &kp UP &kp RIGHT &trans &trans
-   &kp LSHFT  &trans       &trans       &trans       &trans       &trans         &trans   &trans   &trans &trans    &trans &trans
-                          	        &kp LGUI     &trans       &kp SPACE      &kp RET  &trans   &kp RALT
+   &trans &kp deGREATER_THAN &kp deRIGHT_BRACKET &kp deRIGHT_BRACE &kp  deRIGHT_PARENTHESIS &trans｜  &kp BT_NXT &kp OUT_USB  &kp OUT_BLE  &trans       &reset       &trans
+   &trans &kp deLESS_THAN    &kp deLEFT_BRACKET  &kp deLEFT_BRACE  &kp  deLEFT_PARENTHESIS  &trans｜  &kp BT_PRV &trans       &trans       &trans       &bootloader  &trans
+   &trans &kp dePIPE         &kp dePERCENT       &kp deDOLLAR      &kp  deAT_SIGN           &trans｜  &kp BT_CLR &kp BT_SEL 0 &kp BT_SEL 1 &kp BT_SEL 2 &kp BT_SEL 3 &trans
+                                                 &trans            &trans                   &trans｜  &trans     &trans       &trans 
                         >;
                 };
 
-                raise_layer {
-                        label = "SYMBOL";
+                number {
+                        label = "NUMBER";
 // -----------------------------------------------------------------------------------------
-// |  TAB |  !  |  @  |  #  |  $  |  %  |   |  ^  |  &  |  *  |  (  |  )  | BKSP |
-// | CTRL |     |     |     |     |     |   |  -  |  =  |  [  |  ]  |  \  |  `   |
-// | SHFT |     |     |     |     |     |   |  _  |  +  |  {  |  }  | "|" |  ~   |
-//                    | GUI |     | SPC |   | ENT |     | ALT |
+// |      |  *  |  9  |  8  |  7  |  ,  |   |  ,  |  7  |  8  |  9  |  *  |     |
+// |      |  +  |  6  |  5  |  4  |  .  |   |  .  |  4  |  5  |  6  |  +  |     |
+// |      |  -  |  3  |  2  |  1  |  0  |   |  0  |  1  |  2  |  3  |  -  |     |
+//                    |  0  |NMLCK|     |   |     |NMLCK|  0  |
                         bindings = <
-   &kp  TAB  &kp EXCL &kp AT &kp HASH &kp DLLR &kp PRCNT   &kp CARET &kp AMPS  &kp KP_MULTIPLY &kp LPAR &kp RPAR &kp BSPC
-   &kp LCTRL &trans   &trans &trans   &trans   &trans      &kp MINUS &kp EQUAL &kp LBKT        &kp RBKT &kp BSLH &kp GRAVE
-   &kp LSHFT &trans   &trans &trans   &trans   &trans      &kp UNDER &kp PLUS  &kp LBRC        &kp RBRC &kp PIPE &kp TILDE
-                    	     &kp LGUI &trans   &kp SPACE   &kp RET   &trans    &kp RALT
+   &trans &kp KP_ASTERISK &kp KP_N9 &kp KP_N8 &kp KP_N7   &kp deCOMMA｜  &kp deCOMMA &kp KP_N7   &kp KP_N8 &kp KP_N9 &kp KP_ASTERISK &trans
+   &trans &kp KP_PLUS     &kp KP_N6 &kp KP_N5 &kp KP_N4   &kp deDOT  ｜  &kp deDOT   &kp KP_N4   &kp KP_N5 &kp KP_N6 &kp KP_PLUS     &trans
+   &trans &kp KP_MINUS    &kp KP_N3 &kp KP_N2 &kp KP_N1   &kp KP_N0  ｜  &kp KP_N0   &kp KP_N1   &kp KP_N2 &kp KP_N3 &kp KP_MINUS    &trans
+                                    &kp KP_N0 &kp KP_NLCK &trans     ｜  &trans      &kp KP_NLCK &kp KP_N0
+                        >;
+                };
+
+                nav {
+                        label = "NAV";
+// -----------------------------------------------------------------------------------------
+// |      | pgup| pos1|  up | end | bspc|   |VOLUP|     |     |     |     |     |
+// |      | pgdn| left| down|right| del |   |VOLDN| FFW | PLAY| REW |     |     |
+// |      |     |     |     |     |     |   |     |     |     |     |     |     |
+//                    |     |     |     |   |     |     |     |
+                        bindings = <
+   &trans &kp PG_UP &kp HOME &kp UP   &kp END   &kp BSPC｜  &kp K_VOL_UP &kp           &kp              &kp        &kp   &trans
+   &trans &kp PG_DN &kp LEFT &kp DOWN &kp RIGHT &kp DEL ｜  &kp K_VOL_DN &kp K_FORWARD &kp K_PLAY_PAUSE &kp K_BACK &kp   &trans
+   &trans &kp       &kp      &kp      &kp       &kp     ｜  &kp          &kp           &kp              &kp        &kp   &trans
+                             &kp      &kp       &kp     ｜  &kp          &kp           &kp 
                         >;
                 };
         };
