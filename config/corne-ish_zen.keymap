@@ -132,14 +132,14 @@
 // |      |  Z  |  X  |  C  |  V  |  B  |   |  N  |  M   |  ,  |  .  |  /  |      |
 //                    | GUI | LWR | SPC |   | ENT | RSE  | ALT |
                         bindings = <
-// 0     1            2          3           4           5             ｜   6          7           8           9          10       11                   
-   &none &kp Q        &kp W      &kp E       &kp R       &kp T         ｜   &kp deY    &kp U       &kp I       &kp O      &kp P    &none
-// 12    13           14         15          16          17            ｜   18         19          20          21         22       23
-   &none &kp A        &hm LALT S &hm LCTRL D &hm LSHFT F &kp G         ｜   &kp H      &hm RSHFT J &hm RCTRL K &hm RALT L &kp RET  &none
-// 24    25           26         27          28          29            ｜   30         31          32          33         34       35 
-   &none &hm LGUI deZ &kp X      &kp C       &kp V       &kp B         ｜   &kp N      &kp M       &kp COMMA   &kp DOT    &kp FSLH &none
-//                               36          37          38            ｜   39         40          41    
-                                 &none       &lt 2 RET   &lt 1 SPACE   ｜   &lt 1 BPSC &lt 2 DEL   &none
+// 0     1            2          3           4           5                6          7           8           9          10       11                   
+   &none &kp Q        &kp W      &kp E       &kp R       &kp T            &kp deY    &kp U       &kp I       &kp O      &kp P    &none
+// 12    13           14         15          16          17               18         19          20          21         22       23
+   &none &kp A        &hm LALT S &hm LCTRL D &hm LSHFT F &kp G            &kp H      &hm RSHFT J &hm RCTRL K &hm RALT L &kp RET  &none
+// 24    25           26         27          28          29               30         31          32          33         34       35 
+   &none &hm LGUI deZ &kp X      &kp C       &kp V       &kp B            &kp N      &kp M       &kp COMMA   &kp DOT    &kp FSLH &none
+//                               36          37          38               39         40          41    
+                                 &none       &lt 2 RET   &lt 1 SPACE      &lt 1 BPSC &lt 2 DEL   &none
                         >;
                 };
                 symbol {
@@ -150,10 +150,10 @@
 // |      |  |  |  %  |  $  |  @  |  &  |   |BT_CLR| BT 0| BT 1| BT 2| BT 3|     |
 //                    |     |     |     |   |      |     |     |
                         bindings = <
-   &trans &kp deGREATER_THAN &kp deRIGHT_BRACKET &kp deRIGHT_BRACE &kp  deRIGHT_PARENTHESIS &trans｜  &kp BT_NXT &kp OUT_USB  &kp OUT_BLE  &trans       &reset       &trans
-   &trans &kp deLESS_THAN    &kp deLEFT_BRACKET  &kp deLEFT_BRACE  &kp  deLEFT_PARENTHESIS  &trans｜  &kp BT_PRV &trans       &trans       &trans       &bootloader  &trans
-   &trans &kp dePIPE         &kp dePERCENT       &kp deDOLLAR      &kp  deAT_SIGN           &trans｜  &kp BT_CLR &kp BT_SEL 0 &kp BT_SEL 1 &kp BT_SEL 2 &kp BT_SEL 3 &trans
-                                                 &trans            &trans                   &trans｜  &trans     &trans       &trans 
+   &trans &kp deGREATER_THAN &kp deRIGHT_BRACKET &kp deRIGHT_BRACE &kp  deRIGHT_PARENTHESIS &trans  &kp BT_NXT &kp OUT_USB  &kp OUT_BLE  &trans       &reset       &trans
+   &trans &kp deLESS_THAN    &kp deLEFT_BRACKET  &kp deLEFT_BRACE  &kp  deLEFT_PARENTHESIS  &trans  &kp BT_PRV &trans       &trans       &trans       &bootloader  &trans
+   &trans &kp dePIPE         &kp dePERCENT       &kp deDOLLAR      &kp  deAT_SIGN           &trans  &kp BT_CLR &kp BT_SEL 0 &kp BT_SEL 1 &kp BT_SEL 2 &kp BT_SEL 3 &trans
+                                                 &trans            &trans                   &trans  &trans     &trans       &trans 
                         >;
                 };
 
@@ -165,10 +165,10 @@
 // |      |  -  |  3  |  2  |  1  |  0  |   |  0  |  1  |  2  |  3  |  -  |     |
 //                    |  0  |NMLCK|     |   |     |NMLCK|  0  |
                         bindings = <
-   &trans &kp KP_ASTERISK &kp KP_N9 &kp KP_N8 &kp KP_N7   &kp deCOMMA｜  &kp deCOMMA &kp KP_N7   &kp KP_N8 &kp KP_N9 &kp KP_ASTERISK &trans
-   &trans &kp KP_PLUS     &kp KP_N6 &kp KP_N5 &kp KP_N4   &kp deDOT  ｜  &kp deDOT   &kp KP_N4   &kp KP_N5 &kp KP_N6 &kp KP_PLUS     &trans
-   &trans &kp KP_MINUS    &kp KP_N3 &kp KP_N2 &kp KP_N1   &kp KP_N0  ｜  &kp KP_N0   &kp KP_N1   &kp KP_N2 &kp KP_N3 &kp KP_MINUS    &trans
-                                    &kp KP_N0 &kp KP_NLCK &trans     ｜  &trans      &kp KP_NLCK &kp KP_N0
+   &trans &kp KP_ASTERISK &kp KP_N9 &kp KP_N8 &kp KP_N7   &kp deCOMMA  &kp deCOMMA &kp KP_N7   &kp KP_N8 &kp KP_N9 &kp KP_ASTERISK &trans
+   &trans &kp KP_PLUS     &kp KP_N6 &kp KP_N5 &kp KP_N4   &kp deDOT    &kp deDOT   &kp KP_N4   &kp KP_N5 &kp KP_N6 &kp KP_PLUS     &trans
+   &trans &kp KP_MINUS    &kp KP_N3 &kp KP_N2 &kp KP_N1   &kp KP_N0    &kp KP_N0   &kp KP_N1   &kp KP_N2 &kp KP_N3 &kp KP_MINUS    &trans
+                                    &kp KP_N0 &kp KP_NLCK &trans       &trans      &kp KP_NLCK &kp KP_N0
                         >;
                 };
 
@@ -180,10 +180,10 @@
 // |      |     |     |     |     |     |   |     |     |     |     |     |     |
 //                    |     |     |     |   |     |     |     |
                         bindings = <
-   &trans &kp PG_UP &kp HOME &kp UP   &kp END   &kp BSPC｜  &kp K_VOL_UP &kp           &kp              &kp        &kp   &trans
-   &trans &kp PG_DN &kp LEFT &kp DOWN &kp RIGHT &kp DEL ｜  &kp K_VOL_DN &kp K_FORWARD &kp K_PLAY_PAUSE &kp K_BACK &kp   &trans
-   &trans &kp       &kp      &kp      &kp       &kp     ｜  &kp          &kp           &kp              &kp        &kp   &trans
-                             &kp      &kp       &kp     ｜  &kp          &kp           &kp 
+   &trans &kp PG_UP &kp HOME &kp UP   &kp END   &kp BSPC  &kp K_VOL_UP &kp           &kp              &kp        &kp   &trans
+   &trans &kp PG_DN &kp LEFT &kp DOWN &kp RIGHT &kp DEL   &kp K_VOL_DN &kp K_FORWARD &kp K_PLAY_PAUSE &kp K_BACK &kp   &trans
+   &trans &kp       &kp      &kp      &kp       &kp       &kp          &kp           &kp              &kp        &kp   &trans
+                             &kp      &kp       &kp       &kp          &kp           &kp 
                         >;
                 };
         };
