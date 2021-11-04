@@ -161,10 +161,10 @@
 // |      |  -  |  3  |  2  |  1  |  0  |   |  0  |  1  |  2  |  3  |  -  |     |
 //                    |  0  |NMLCK|     |   |     |NMLCK|  0  |
                         bindings = <
-   &trans &kp KP_ASTERISK &kp KP_N9 &kp KP_N8 &kp KP_N7   &kp deCOMMA  &kp deCOMMA &kp KP_N7   &kp KP_N8 &kp KP_N9 &kp KP_ASTERISK &trans
-   &trans &kp KP_PLUS     &kp KP_N6 &kp KP_N5 &kp KP_N4   &kp deDOT    &kp deDOT   &kp KP_N4   &kp KP_N5 &kp KP_N6 &kp KP_PLUS     &trans
-   &trans &kp KP_MINUS    &kp KP_N3 &kp KP_N2 &kp KP_N1   &kp KP_N0    &kp KP_N0   &kp KP_N1   &kp KP_N2 &kp KP_N3 &kp KP_MINUS    &trans
-                                    &kp KP_N0 &kp KP_NLCK &trans       &trans      &kp KP_NLCK &kp KP_N0
+   &trans &kp KP_ASTERISK &kp KP_N9 &kp KP_N8 &kp KP_N7   &kp deCOMMA  &kp deCOMMA  &kp KP_N7   &kp KP_N8 &kp KP_N9 &kp KP_ASTERISK &trans
+   &trans &kp KP_PLUS     &kp KP_N6 &kp KP_N5 &kp KP_N4   &kp dePERIOD &kp dePERIOD &kp KP_N4   &kp KP_N5 &kp KP_N6 &kp KP_PLUS     &trans
+   &trans &kp KP_MINUS    &kp KP_N3 &kp KP_N2 &kp KP_N1   &kp KP_N0    &kp KP_N0    &kp KP_N1   &kp KP_N2 &kp KP_N3 &kp KP_MINUS    &trans
+                                    &kp KP_N0 &kp KP_NLCK &trans       &trans       &kp KP_NLCK &kp KP_N0
                         >;
                 };
 
