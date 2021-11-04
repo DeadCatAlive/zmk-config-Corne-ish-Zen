@@ -10,11 +10,6 @@
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/bt.h>
 
-#define base 0
-#define sym 1
-#define num 2
-#define nav 3
-
 / {
 
 	behaviors {
@@ -34,7 +29,7 @@
         combo_nav {
             timeout-ms = <40>;
             key-positions = <37 38>;
-            bindings = <&tog nav>;
+            bindings = <&tog 3>;
         };
 
         combo_ue {
