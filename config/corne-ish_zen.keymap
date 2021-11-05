@@ -135,7 +135,7 @@
 // 24    25           26         27          28          29               30         31          32          33           34          35 
    &none &hm LGUI deZ &kp X      &kp C       &kp V       &kp B            &kp N      &kp M       &kp deCOMMA &kp dePERIOD &kp deMINUS &none
 //                               36          37          38               39         40          41    
-                                 &none       &lt 2 RET   &lt 1 SPACE      &lt 1 BACKSPACE &lt 2 DEL   &none
+                                 &none       &lt 2 RET   &lt 1 SPACE      &lt 1 DEL &lt 2 BACKSPACE   &none
                         >;
                 };
                 symbol {
