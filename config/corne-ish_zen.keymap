@@ -33,6 +33,12 @@
             bindings = <&tog 3>;
         };
 
+        combo_extra {
+            timeout-ms = <40>;
+            key-positions = <39 40>;
+            bindings = <&tog 4>;
+        };
+
         combo_ue {
             timeout-ms = <40>;
             key-positions = <7 3>;
@@ -141,15 +147,15 @@
                 symbol {
                         label = "SYMBOL";
 // -----------------------------------------------------------------------------------------
-// |      |  >  |  ]  |  }  |  )  |  \  |   |BT_NXT| USB |  BT |     |RESET|     |
-// |      |  <  |  [  |  {  |  (  |  /  |   |BT_PRV|     |     |     |Boot |     |
-// |      |  |  |  %  |  $  |  @  |  &  |   |BT_CLR| BT 0| BT 1| BT 2| BT 3|     |
+// |      |  >  |  ]  |  }  |  )  |  \  |   |   ^  |     |     |     |  +  |     |
+// |      |  <  |  [  |  {  |  (  |  /  |   |   ´  |     |     |     |  #  |     |
+// |      |  |  |  %  |  $  |  @  |  &  |   |      |     |     |     |     |     |
 //                    |     |     |     |   |      |     |     |
                         bindings = <
-   &trans &kp deGREATER_THAN &kp deRIGHT_BRACKET &kp deRIGHT_BRACE &kp  deRIGHT_PARENTHESIS &kp deBACKSLASH  &bt BT_NXT &out OUT_USB &out OUT_BLE  &trans       &reset       &trans
-   &trans &kp deLESS_THAN    &kp deLEFT_BRACKET  &kp deLEFT_BRACE  &kp  deLEFT_PARENTHESIS  &kp deSLASH      &bt BT_PRV &trans       &trans        &trans       &bootloader  &trans
-   &trans &kp dePIPE         &kp dePERCENT       &kp deDOLLAR      &kp  deAT_SIGN           &kp deAMPERSAND  &bt BT_CLR &bt BT_SEL 0 &bt BT_SEL 1  &bt BT_SEL 2 &bt BT_SEL 3 &trans
-                                                 &trans            &trans                   &trans           &trans     &trans       &trans 
+   &trans &kp deGREATER_THAN &kp deRIGHT_BRACKET &kp deRIGHT_BRACE &kp  deRIGHT_PARENTHESIS &kp deBACKSLASH /**/  &kp deCIRCUMFLEX &trans &trans &trans &kp dePLUS &trans
+   &trans &kp deLESS_THAN    &kp deLEFT_BRACKET  &kp deLEFT_BRACE  &kp  deLEFT_PARENTHESIS  &kp deSLASH     /**/  &kp deACUTE      &trans &trans &trans &kp deHASH &trans
+   &trans &kp dePIPE         &kp dePERCENT       &kp deDOLLAR      &kp  deAT_SIGN           &kp deAMPERSAND /**/  &trans           &trans &trans &trans &trans     &trans
+                                                 &trans            &trans                   &trans          /**/  &trans           &trans &trans 
                         >;
                 };
 
@@ -180,6 +186,21 @@
    &trans &kp PG_DN &kp LEFT &kp DOWN &kp RIGHT &kp DEL   &kp K_VOL_DN &kp K_FORWARD &kp K_PLAY_PAUSE &kp K_BACK &kp   &trans
    &trans &kp       &kp      &kp      &kp       &kp       &kp          &kp           &kp              &kp        &kp   &trans
                              &kp      &kp       &kp       &kp          &kp           &kp 
+                        >;
+                };
+
+                extra {
+                        label = "EXTRA";
+// -----------------------------------------------------------------------------------------
+// |      |     |     |     |     |     |   |BT_NXT| USB |  BT |     |RESET|     |
+// |      |     |     |     |     |     |   |BT_PRV|     |     |     |Boot |     |
+// |      |     |     |     |     |     |   |BT_CLR| BT 0| BT 1| BT 2| BT 3|     |
+//                    |     |     |     |   |      |     |     |
+                        bindings = <
+   &trans &trans &trans &trans &trans &trans             &bt BT_NXT &out OUT_USB &out OUT_BLE  &trans       &reset       &trans
+   &trans &trans &trans &trans &trans &trans             &bt BT_PRV &trans       &trans        &trans       &bootloader  &trans
+   &trans &trans &trans &trans &trans &trans             &bt BT_CLR &bt BT_SEL 0 &bt BT_SEL 1  &bt BT_SEL 2 &bt BT_SEL 3 &trans
+                        &trans &trans &trans             &trans     &trans       &trans 
                         >;
                 };
         };
