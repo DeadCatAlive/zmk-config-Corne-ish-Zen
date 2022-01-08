@@ -37,6 +37,7 @@
             key-positions = <39 40>;
             bindings = <&tog 4>;
         };
+
         combo_ue {
             timeout-ms = <40>;
             key-positions = <7 3>;
@@ -56,12 +57,19 @@
             timeout-ms = <40>;
             key-positions = <13 14>;
             bindings = <&kp deESZETT>;
-        };
+        }; 
+
         combo_esc {
             timeout-ms = <40>;
             key-positions = <16 17>;
             bindings = <&kp ESCAPE>;
         };
+        combo_tab {
+            timeout-ms = <40>;
+            key-positions = <28 29>;
+            bindings = <&kp ESCAPE>;
+        };
+
         combo_F1 {
             timeout-ms = <40>;
             key-positions = <1 13>;
@@ -151,13 +159,13 @@
 // -----------------------------------------------------------------------------------------
 // |      |  >  |  ]  |  }  |  )  |  \  |   |   ^  |     |     |     |  +  |     |
 // |      |  <  |  [  |  {  |  (  |  /  |   |   ´  |     |     |     |  #  |     |
-// |      |  |  |  %  |  $  |  @  |  &  |   |      |     |     |     |     |     |
+// |      |  |  |  %  |  $  |  @  |  &  |   |   !  |     |     |     |     |     |
 //                    |     |     |     |   |      |     |     |
                         bindings = <
-   &trans &kp deGREATER_THAN &kp deRIGHT_BRACKET &kp deRIGHT_BRACE &kp  deRIGHT_PARENTHESIS &kp deBACKSLASH /**/  &kp deCIRCUMFLEX &trans &trans &trans &kp dePLUS &trans
-   &trans &kp deLESS_THAN    &kp deLEFT_BRACKET  &kp deLEFT_BRACE  &kp  deLEFT_PARENTHESIS  &kp deSLASH     /**/  &kp deACUTE      &trans &trans &trans &kp deHASH &trans
-   &trans &kp dePIPE         &kp dePERCENT       &kp deDOLLAR      &kp  deAT_SIGN           &kp deAMPERSAND /**/  &trans           &trans &trans &trans &trans     &trans
-                                                 &trans            &trans                   &trans          /**/  &trans           &trans &trans 
+   &trans &kp deGREATER_THAN &kp deRIGHT_BRACKET &kp deRIGHT_BRACE &kp  deRIGHT_PARENTHESIS &kp deBACKSLASH /**/  &kp deCIRCUMFLEX  &trans &trans &trans &kp dePLUS &trans
+   &trans &kp deLESS_THAN    &kp deLEFT_BRACKET  &kp deLEFT_BRACE  &kp  deLEFT_PARENTHESIS  &kp deSLASH     /**/  &kp deACUTE       &trans &trans &trans &kp deHASH &trans
+   &trans &kp dePIPE         &kp dePERCENT       &kp deDOLLAR      &kp  deAT_SIGN           &kp deAMPERSAND /**/  &kp deEXCLAMATION &trans &trans &trans &trans     &trans
+                                                 &trans            &trans                   &trans          /**/  &trans            &trans &trans 
                         >;
                 };
 
