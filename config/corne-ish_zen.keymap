@@ -67,7 +67,7 @@
         combo_tab {
             timeout-ms = <40>;
             key-positions = <28 29>;
-            bindings = <&kp ESCAPE>;
+            bindings = <&kp TAB>;
         };
 
         combo_F1 {
